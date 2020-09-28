@@ -6,6 +6,12 @@ spring:
     password: 1234
   jpa:
     database-platform: org.hibernate.dialect.H2Dialect
+    show-sql: true
+    properties:
+      hibernate:
+        format: true
+    hibernate:
+      ddl-auto: create-drop
   h2:
     console:
       enabled: true
