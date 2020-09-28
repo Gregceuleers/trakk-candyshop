@@ -1,4 +1,4 @@
-package be.trakk.candyshop.model.entities;
+package be.trakk.candyshop.entities;
 
 import lombok.*;
 import lombok.experimental.FieldDefaults;

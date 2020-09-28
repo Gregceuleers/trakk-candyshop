@@ -1,4 +1,4 @@
-package be.trakk.candyshop.model.entities;
+package be.trakk.candyshop.entities;
 
 import lombok.*;
 import lombok.experimental.FieldDefaults;
@@ -46,9 +46,17 @@ public class User implements UserDetails {
     String email;
 
     @Embedded
+    @Column(name = "address")
     Address address;
 
     @Embedded
+    @AttributeOverrides({
+            @AttributeOverride(name = "street", column = @Column(name = "delivery_street")),
+            @AttributeOverride(name = "number", column = @Column(name = "delivery_number")),
+            @AttributeOverride(name = "zip", column = @Column(name = "delivery_zip")),
+            @AttributeOverride(name = "city", column = @Column(name = "delivery_city")),
+            @AttributeOverride(name = "country", column = @Column(name = "delivery_country"))
+    })
     Address deliveryAddress;
 
     boolean accountNonExpired;
